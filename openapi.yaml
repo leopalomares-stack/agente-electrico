@@ -3,7 +3,7 @@ info:
   title: Agente Eléctrico Universal
   version: "2.0.0"
 servers:
-  - url: https://TU-URL-RENDER.a.run.app   # <--- la cambiarás en el paso 3
+  - url: https://agente-electrico.onrender.com   # <--- la cambiarás en el paso 3
 paths:
   /webProductSearch:
     post:
