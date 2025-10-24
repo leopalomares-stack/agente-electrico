@@ -1,0 +1,54 @@
+openapi: 3.1.0
+info:
+  title: Agente Eléctrico Universal
+  version: "2.0.0"
+servers:
+  - url: https://TU-URL-RENDER.a.run.app   # <--- la cambiarás en el paso 3
+paths:
+  /webProductSearch:
+    post:
+      operationId: webProduct.search
+      description: Busca en tiendas online productos eléctricos y devuelve marcas, precios y URLs.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query: { type: string }
+                max: { type: integer, default: 5 }
+              required: [query]
+      responses:
+        "200": { description: OK }
+  /webComplements:
+    post:
+      operationId: webComplements.search
+      description: Sugiere productos complementarios para un artículo o categoría.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                base_query: { type: string }
+              required: [base_query]
+      responses:
+        "200": { description: OK }
+  /generateExcels:
+    post:
+      operationId: generateExcels
+      description: Genera dos archivos Excel (cliente e interno) bajo demanda.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productos: { type: array, items: { type: object } }
+                filePrefix: { type: string }
+              required: [productos]
+      responses:
+        "200": { description: OK }
