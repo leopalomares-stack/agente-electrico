@@ -7,7 +7,7 @@ servers:
 paths:
   /webProductSearch:
     post:
-      operationId: webProduct.search
+      operationId: webProduct_search
       description: Busca en tiendas online productos eléctricos y devuelve marcas, precios y URLs.
       requestBody:
         required: true
@@ -23,7 +23,7 @@ paths:
         "200": { description: OK }
   /webComplements:
     post:
-      operationId: webComplements.search
+      operationId: webComplements_search
       description: Sugiere productos complementarios para un artículo o categoría.
       requestBody:
         required: true
